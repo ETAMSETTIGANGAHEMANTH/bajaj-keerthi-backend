@@ -6,7 +6,11 @@ const WebSocket = require('ws');
 const app = express();
 app.use(bodyParser.json());
 
-const allowedOrigins = ['http://localhost:3001', 'http://localhost:3000'];
+const allowedOrigins = [
+  'https://bajaj-mani-frontend-7d18afbf56f7.herokuapp.com',
+  'http://localhost:3000',
+  'http://localhost:3001'
+];
 
 app.use(cors({
     origin: function (origin, callback) {
@@ -18,10 +22,10 @@ app.use(cors({
     }
 }));
 
-const fullName = 'ESWARA MANIKANTA CHANDRA PRASAD PERUMALLA';
-const dob = '02102003';
-const email = 'manikantaperumalla2102002@gmail.com';
-const rollNumber = 'RA2111003010745';
+const fullName = 'KEERTHI GURUGUBELLI';
+const dob = '15072004';
+const email = 'gg0692@srmist.edu.in';
+const rollNumber = 'RA2111030010093';
 
 function separateData(data) {
     const numbers = [];
@@ -64,6 +68,11 @@ app.get('/bfhl', (req, res) => {
     };
 
     res.status(200).json(response);
+});
+
+// Add a root route to resolve the "Cannot GET /" issue
+app.get('/', (req, res) => {
+    res.send('Welcome to the BFHL API');
 });
 
 const server = require('http').createServer(app);
