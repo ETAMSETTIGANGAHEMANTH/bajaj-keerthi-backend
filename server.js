@@ -7,7 +7,7 @@ const app = express();
 app.use(bodyParser.json());
 
 const allowedOrigins = [
-  'https://bajaj-mani-frontend-7d18afbf56f7.herokuapp.com',
+  'https://bajaj-keerthi-frontend-bfd99e58f298.herokuapp.com',
   'http://localhost:3000',
   'http://localhost:3001'
 ];
